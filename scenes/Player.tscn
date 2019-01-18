@@ -1,0 +1,238 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/idle1/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/idle1/adventurer-idle-01.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/idle1/adventurer-idle-02.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/fall/adventurer-fall-00.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/fall/adventurer-fall-01.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/cast/adventurer-cast-00.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/cast/adventurer-cast-01.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/cast/adventurer-cast-02.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/cast/adventurer-cast-03.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/cast/adventurer-cast-loop-00.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/cast/adventurer-cast-loop-01.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/cast/adventurer-cast-loop-02.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/die/adventurer-die-00.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/die/adventurer-die-01.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/die/adventurer-die-02.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/die/adventurer-die-03.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/die/adventurer-die-04.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/die/adventurer-die-05.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/die/adventurer-die-06.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/sword-sheet/adventurer-swrd-shte-00.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/sword-sheet/adventurer-swrd-shte-01.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/sword-sheet/adventurer-swrd-shte-02.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/sword-sheet/adventurer-swrd-shte-03.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/crouch/adventurer-crouch-00.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/crouch/adventurer-crouch-01.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/crouch/adventurer-crouch-02.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/crouch/adventurer-crouch-03.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/sword-draw/adventurer-swrd-drw-00.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/sword-draw/adventurer-swrd-drw-01.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/sword-draw/adventurer-swrd-drw-02.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/sword-draw/adventurer-swrd-drw-03.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/jump/adventurer-jump-02.png" type="Texture" id=33]
+[ext_resource path="res://assets/player/run/adventurer-run-00.png" type="Texture" id=34]
+[ext_resource path="res://assets/player/run/adventurer-run-01.png" type="Texture" id=35]
+[ext_resource path="res://assets/player/run/adventurer-run-02.png" type="Texture" id=36]
+[ext_resource path="res://assets/player/run/adventurer-run-03.png" type="Texture" id=37]
+[ext_resource path="res://assets/player/run/adventurer-run-04.png" type="Texture" id=38]
+[ext_resource path="res://assets/player/run/adventurer-run-05.png" type="Texture" id=39]
+[ext_resource path="res://assets/player/jump/adventurer-jump-03.png" type="Texture" id=40]
+[ext_resource path="res://assets/player/idle2/adventurer-idle-2-00.png" type="Texture" id=41]
+[ext_resource path="res://assets/player/idle2/adventurer-idle-2-01.png" type="Texture" id=42]
+[ext_resource path="res://assets/player/idle2/adventurer-idle-2-02.png" type="Texture" id=43]
+[ext_resource path="res://assets/player/idle2/adventurer-idle-2-03.png" type="Texture" id=44]
+[ext_resource path="res://assets/player/attack1/adventurer-attack1-00.png" type="Texture" id=45]
+[ext_resource path="res://assets/player/attack1/adventurer-attack1-01.png" type="Texture" id=46]
+[ext_resource path="res://assets/player/attack1/adventurer-attack1-02.png" type="Texture" id=47]
+[ext_resource path="res://assets/player/attack1/adventurer-attack1-03.png" type="Texture" id=48]
+[ext_resource path="res://assets/player/attack1/adventurer-attack1-04.png" type="Texture" id=49]
+[ext_resource path="res://assets/enviroment/Extension_blue.png" type="Texture" id=50]
+[ext_resource path="res://assets/enviroment/Middleground.png" type="Texture" id=51]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 7.04937
+height = 13.5921
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "falling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "casting",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "sword-sheat",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "sword-draw",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "idle-sword",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "attack_fast",
+"speed": 12.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+z_index = 1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Z Index", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 0.620903, 3.32131 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "attack_fast"
+frame = 3
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+position = Vector2( 0.213257, 0.753922 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = -264
+limit_right = 2784
+limit_bottom = 96
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 10.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+visible = false
+scale = Vector2( 3, 3 )
+motion_scale = Vector2( 0.1, 0.1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 380, 0 )
+_sections_unfolded = [ "Material", "Motion", "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+visible = false
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+visible = false
+scale = Vector2( 3, 3 )
+motion_scale = Vector2( 0.1, 0.1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 380, 0 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+
+visible = false
+texture = ExtResource( 51 )
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+visible = false
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+
+[node name="Position2D" type="Position2D" parent="." index="4"]
+
+position = Vector2( 17.1717, 1.92059 )
+
+[node name="State" type="Node" parent="." index="5"]
+
+[node name="Running" type="Node" parent="State" index="0"]
+
+
